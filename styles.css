@@ -17,6 +17,39 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.icon {
+  position: fixed;
+  bottom: 60px;
+  right: 30px;
+  font-size: 30px;
+  background-color: #01e675;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 3px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  z-index: 100;
+  box-shadow: 2px 2px 2px #c0bdbd;
+  transition: 0.5s;
+}
+
+.icon .fab{
+  padding-top: 9px;
+}
+
+.icon:hover{
+  background-color: #fff;
+  color: #029e3b;
+  font-weight: 900;
+  box-shadow: 2px 2px 20px #5fe690;
+}
+
 .section__container {
   max-width: var(--max-width);
   margin: auto;
@@ -72,6 +105,9 @@ a {
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--primary-color);
+  
+  
+  
 }
 
 nav {
@@ -379,8 +415,7 @@ nav {
 
 .price__grid {
   margin-top: 4rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 2rem;
 }
 
@@ -396,6 +431,19 @@ nav {
 
 .titulo-destaque{
   color: var(--secondary-color-dark);
+}
+
+.titulo-destaque2{
+  border:4px solid var(--cor-azul);
+  position: relative;
+  text-transform: capitalize;
+  text-decoration:none;
+  color:#d9f1fa;
+  background-color: transparent;
+  font-size: 1em;
+  transition:0.4s;
+  text-shadow: 0 0 0.125em rgba(0, 0, 0, 0.5), 0 0 0.25em currentColor;
+  box-shadow: inset 0 0 0.5em 0 var(--cor-azul), 0 0 0.5em 0 var(--cor-azul);
 }
 
 .price__card:hover {
@@ -415,10 +463,14 @@ nav {
   color: var(--white);
 }
 
+.valor-antigo{
+  text-decoration: line-through;
+}
+
 .price__card h3 {
   padding-bottom: 1rem;
   margin-bottom: 2rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--white);
   border-bottom: 2px solid var(--white);
@@ -547,8 +599,8 @@ nav {
 
 .footer__container {
   position: relative;
-  display: grid;
-  grid-template-columns: 400px repeat(3, 1fr);
+  display: flex;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -605,6 +657,21 @@ nav {
   color: var(--secondary-color);
 }
 
+.scroll-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll{
+  max-width: 250px;
+  
+}
+
+.linha-container{
+  margin: -40rem;
+}
+
 .footer__bar {
   max-width: var(--max-width);
   margin: auto;
@@ -614,17 +681,32 @@ nav {
 }
 
 @media (width < 900px) {
+  .header__container::before {
+    display: none;
+  }
+
+  nav{
+    position: sticky;
+    top: 0;
+
+  }
+
+  .price__grid{
+    flex-direction: column;
+  }
+
   .nav__links {
     display: none;
   }
 
   .class__image {
     position: relative;
+
   }
   
   .class__image .class__img-1 {
     position: absolute;
-    right: 0;
+    
     max-width: 400px;
     border-radius: 10px;
     
@@ -634,7 +716,7 @@ nav {
   
   .class__image .class__img-2 {
     position: absolute;
-    left: 0;
+    
     
     max-width: 400px;
     border-radius: 10px;
