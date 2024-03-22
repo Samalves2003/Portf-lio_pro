@@ -680,7 +680,7 @@ nav {
   color: var(--white);
 }
 
-@media (width < 900px) {
+@media (width < 1180px) {
   .header__container::before {
     display: none;
   }
